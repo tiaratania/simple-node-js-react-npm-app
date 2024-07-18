@@ -1,10 +1,6 @@
 pipeline {
-    agent { //specifing agent
-        docker{
-        image 'node:lts-buster-slim'
-        args '-u root:root'
-        }
-    }
+    agent any
+    tools {nodejs "node"}
     stages {
         stage('Build') {
             steps {
